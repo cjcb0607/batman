@@ -10,21 +10,23 @@ class Drops{
         this.x=x
         this.y=y
         this.velocityY=3
+        World.add(world, this.rain)
         
     }
     
-    
+
     update(){
-        if(this.rain.position.y>height){
+        if(this.rain.position.y>700){
             Matter.Body.setPosition(this.rain,{x:random(0,400), y:random(0,400)})    
         }
         
     }
-
+    
+   
     display(){		
 			push()
 			fill("blue");
-			ellipse(this.x,this.y,5, 5);
+			ellipse(this.rain.position.x,this.rain.position.y,5, 5);
 			pop()
 	}
 
